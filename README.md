@@ -10,7 +10,7 @@ This crate now builds two binaries:
   - Control group.
   - Every `RedrawRequested` fills the full buffer and calls `present()`.
 - `softbuffer-visibility-repro-damage-tracked.exe`
-  - Closer to `mica-term` / Slint software behavior.
+  - Closer to  Slint software behavior.
   - A redraw only calls `present()` when the logical content changed.
   - Redraws without a logical dirty region intentionally skip present.
 
@@ -25,7 +25,7 @@ Neither binary requests redraws on move events. They only redraw when the color 
 
 The baseline binary is the pure `winit + softbuffer` comparison point.
 
-The damage-tracked binary models the more interesting case for `mica-term`: a redraw can happen, but the renderer may still choose not to present because it thinks there is no dirty region. That makes it useful for checking whether the Windows stale-region symptom depends on damage-tracked rendering semantics rather than on `softbuffer` alone.
+The damage-tracked binary models the more interesting case for Slint: a redraw can happen, but the renderer may still choose not to present because it thinks there is no dirty region. That makes it useful for checking whether the Windows stale-region symptom depends on damage-tracked rendering semantics rather than on `softbuffer` alone.
 
 ## Reproduction on Windows
 
@@ -40,7 +40,7 @@ The damage-tracked binary models the more interesting case for `mica-term`: a re
   - If a redraw happens, it always re-presents the full frame.
 - Damage-tracked:
   - If a redraw happens without a logical change after the toggle has already been presented, the app logs that it skipped present.
-  - This is the closer approximation of the `mica-term` / Slint software path.
+  - This is the closer approximation of the  Slint software path.
 
 ## Build a Windows `.exe` From Linux
 
