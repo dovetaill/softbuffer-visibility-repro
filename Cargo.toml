@@ -1,0 +1,19 @@
+[package]
+name = "softbuffer-visibility-repro"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "softbuffer-visibility-repro-baseline"
+path = "src/bin/baseline.rs"
+
+[[bin]]
+name = "softbuffer-visibility-repro-damage-tracked"
+path = "src/bin/damage_tracked.rs"
+
+[dependencies]
+softbuffer = "0.4.8"
+winit = "0.30.13"

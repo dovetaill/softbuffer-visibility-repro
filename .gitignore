@@ -1,0 +1,6 @@
+/target
+/dist/
+!/dist/
+/dist/*
+!/dist/softbuffer-visibility-repro-baseline.exe
+!/dist/softbuffer-visibility-repro-damage-tracked.exe
